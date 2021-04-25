@@ -9,14 +9,14 @@ class Move(Enum):
     ROCK = 2
 
 
-class Player:
-    def __init__(self, turn: Turn):
-        self.turn = turn
-
-
 Turn = Callable[[], Move]
 Possibility = Optional[bool]
 ##Display:Callable[[Move, Move], None]
+
+
+class Player:
+    def __init__(self, turn: Turn):
+        self.turn = turn
 
 
 def _round(p1: Move, p2: Move) -> Possibility:
